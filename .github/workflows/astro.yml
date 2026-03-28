@@ -36,19 +36,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Setup Node
+        uses: actions/setup-node@v4
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Install
-        run: bun i
+        run: npm i
       - name: Build with Astro
         run: >-
-          bunx --bun astro build
+          npx astro build
           --site "${{ steps.pages.outputs.origin }}"
           --base "${{ steps.pages.outputs.base_path }}";
-          bunx --bun jampack ./dist
+          npx jampack ./dist
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
