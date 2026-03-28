@@ -1,8 +1,6 @@
 ---
-import config from "@/config/config.json";
 import { markdownify } from "@/lib/utils/textConverter";
 import type { CollectionEntry } from "astro:content";
-import ClientLogoSlider from "./ClientLogoSlider.astro";
 
 type Props = {
   hero: CollectionEntry<"homepage">["data"]["hero"];
@@ -11,62 +9,36 @@ type Props = {
 const { hero } = Astro.props;
 ---
 
-<section class="section lg:pt-20">
-  <div class="container">
-    <div class="row justify-center">
-      <div class="col-12 lg:col-10">
-        <div class="mb-24">
-          <h1
-            set:html={markdownify(hero.title)}
-            class="font-normal text-center mb-5"
-            data-aos="fade-up-sm"
-          />
-          <p
-            set:html={markdownify(hero.content)}
-            class="text-center text-balance mb-11 lg:w-2/3 mx-auto"
-            data-aos="fade-up-sm"
-          />
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="hero">
+  <!-- Kaleidoscope background -->
+  <!-- <div class="kaleidoscope-bg" aria-hidden="true">
+    <div class="kaleidoscope-layer kaleidoscope-layer-1"></div>
+    <div class="kaleidoscope-layer kaleidoscope-layer-2"></div>
+    <div class="kaleidoscope-layer kaleidoscope-layer-3"></div>
+  </div> -->
 
-          <form
-            action={config.demo.form_action}
-            method="post"
-            class="flex flex-col sm:flex-row pt-0 w-4/5 lg:w-1/2 mx-auto justify-center gap-y-2 mb-5 sm:relative"
-            data-aos="fade-up-sm"
-          >
-            <div
-              class="w-full h-full bg-gradient-to-br from-secondary to-tertiary rounded-full overflow-hidden p-[1px]"
-            >
-              <input
-                class="px-7 py-4 w-full rounded-full text-text bg-[#161027] focus:border-text-dark focus:ring-transparent"
-                placeholder="Enter your domain"
-                type="text"
-                name="demo"
-                autocomplete="off"
-                required
-              />
-            </div>
-            <div
-              class="sm:absolute sm:right-0 sm:top-1/2 sm:-translate-x-[26%] md:-translate-x-[31%] sm:-translate-y-[50%] px-6 py-2 btn-primary rounded-full text-center"
-            >
-              <button type="submit">Get Demo</button>
-            </div>
-          </form>
-
-          <p
-            set:html={markdownify(config.demo.charge)}
-            class="text-center text-base text-balance -mt-8 mb-11"
-            data-aos="fade-up-sm"
-          />
-        </div>
-      </div>
-      <div class="col-12 lg:col-10 lg:mt-24 lg:mb-28">
-        <p
-          set:html={markdownify(hero.clients.title)}
-          class="font-medium text-balance text-text-light text-center mb-7"
-          data-aos="fade-up-sm"
-        />
-        <ClientLogoSlider logos={hero.clients.logos} />
-      </div>
+  <div class="container relative z-10">
+    <div class="flex flex-col items-center justify-center text-center">
+      <h1
+        set:html={markdownify(hero.tagline)}
+        class="text-6xl md:text-6xl lg:text-6xl xl:text-8xl font-primary font-normal text-text-light mb-6 tracking-tight"
+        data-aos="fade-up-sm"
+      />
+      <p
+        set:html={markdownify(hero.subtitle)}
+        class="text-lg md:text-xl text-text font-secondary tracking-tight"
+        data-aos="fade-up-sm"
+        data-aos-delay="100"
+      />
     </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+    data-aos-delay="300"
+  >
+    <div class="w-px h-12 bg-linear-to-b from-transparent to-text-light/30 mx-auto mb-2"></div>
+    <span class="text-xs text-text/50 font-secondary uppercase tracking-widest">Scroll</span>
   </div>
 </section>

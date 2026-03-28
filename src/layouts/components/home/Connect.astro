@@ -1,0 +1,74 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import config from "@/config/config.json";
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  connect: CollectionEntry<"homepage">["data"]["connect"];
+};
+
+const { connect } = Astro.props;
+---
+
+<section class="section" id="connect">
+  <div class="container">
+    <div class="flex justify-center">
+      <div class="max-w-lg text-center">
+        <h2
+          set:html={markdownify(connect.line)}
+          class="text-3xl md:text-4xl lg:text-5xl font-primary text-text-light mb-6 text-balance"
+          data-aos="fade-up-sm"
+        />
+        <a
+          href={`mailto:${connect.email}`}
+          class="text-lg text-secondary hover:text-tertiary transition font-secondary mb-12 inline-block"
+          data-aos="fade-up-sm"
+          data-aos-delay="50"
+        >
+          {connect.email}
+        </a>
+
+        <!-- Simple contact form -->
+        <form
+          action={config.params.contact_form_action}
+          method="post"
+          class="mt-12 text-left space-y-4"
+          data-aos="fade-up-sm"
+          data-aos-delay="100"
+        >
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+              class="w-full px-4 py-3 bg-accent/10 border border-border/80 rounded-lg text-text-light placeholder:text-text/80 font-secondary focus:border-secondary/50 focus:ring-0 focus:outline-none transition"
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              class="w-full px-4 py-3 bg-accent/10 border border-border/80 rounded-lg text-text-light placeholder:text-text/80 font-secondary focus:border-secondary/50 focus:ring-0 focus:outline-none transition"
+            />
+          </div>
+          <div>
+            <textarea
+              name="message"
+              placeholder="Tell us about your project"
+              rows="4"
+              class="w-full px-4 py-3 bg-accent/10 border border-border/80 rounded-lg text-text-light placeholder:text-text/80 font-secondary focus:border-secondary/50 focus:ring-0 focus:outline-none transition resize-none"
+            ></textarea>
+          </div>
+          <div class="pt-2">
+            <button type="submit" class="btn-md btn-primary w-full">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

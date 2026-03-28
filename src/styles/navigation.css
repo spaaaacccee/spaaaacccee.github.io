@@ -1,10 +1,18 @@
 .header {
-  @apply py-5 w-full;
+  @apply py-5 px-4 w-full max-w-[1460px] mx-auto;
+}
+
+.header-scrolled {
+  @apply bg-body/20 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-none;
+}
+
+.header-scrolled > .navbar {
+  @apply transition-all duration-300 bg-transparent lg:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)] lg:backdrop-blur-md lg:rounded-full;
 }
 
 /* navbar items */
 .navbar {
-  @apply relative flex flex-wrap items-center justify-between;
+  @apply px-2 py-1 relative flex *:flex-1 *:w-0 flex-wrap items-center justify-between min-h-10;
 }
 
 .navbar-brand {
@@ -15,11 +23,11 @@
 }
 
 .navbar-nav {
-  @apply text-center lg:text-left max-lg:absolute max-lg:z-50 max-lg:top-16 max-lg:bg-gradient-to-br max-lg:from-primary max-lg:to-primary rounded order-3 hidden max-lg:w-[calc(100vw_-_21%)] max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2 pb-6 lg:order-1 lg:flex lg:w-auto lg:pb-0 lg:gap-8;
+  @apply text-left lg:text-left max-lg:p-6 max-lg:absolute max-lg:z-50 max-lg:top-16 max-lg:bg-body max-lg:backdrop-blur-md rounded-lg order-3 max-lg:border max-lg:border-white/10 hidden max-lg:w-[calc(100vw_-_64px)] max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2 pb-6 lg:order-1 lg:flex lg:w-auto lg:pb-0 lg:gap-8;
 }
 
 .nav-link {
-  @apply text-text-light/80 hover:text-text-light block p-3 transition lg:px-2 lg:py-3;
+  @apply font-medium text-text-light/70 hover:text-text-light block p-3 transition lg:px-2 lg:py-3 text-sm font-secondary;
 
   &.active {
     @apply text-secondary;
@@ -31,11 +39,11 @@
 }
 
 .nav-dropdown-list {
-  @apply z-10 rounded bg-body lg:bg-gradient-to-br lg:from-primary lg:to-primary mx-4  lg:p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hidden lg:invisible lg:absolute lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100 lg:scale-95 lg:group-hover:scale-100 lg:group-hover:grid lg:grid lg:grid-cols-3 lg:gap-x-8 min-w-max;
+  @apply z-10 rounded-lg bg-body/20 backdrop-blur-md mx-4 lg:p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hidden lg:invisible lg:absolute lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100 lg:scale-95 lg:group-hover:scale-100 lg:group-hover:grid lg:grid lg:grid-cols-3 lg:gap-x-8 min-w-max;
 }
 
 .nav-dropdown-link {
-  @apply text-text-light/80 hover:text-text-light block rounded p-2 transition;
+  @apply text-text/70 hover:text-text-light block rounded p-2 transition;
 
   &.active {
     @apply text-secondary;

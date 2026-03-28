@@ -1,9 +1,9 @@
 html {
-  @apply text-base-sm md:text-base;
+  font-size: 16px;
 }
 
 body {
-  @apply bg-body text-p font-primary font-normal leading-relaxed text-text;
+  @apply bg-body text-p font-primary font-normal leading-relaxed tracking-tight text-text;
 }
 
 h1,
@@ -17,12 +17,12 @@ h6 {
 
 h1,
 .h1 {
-  @apply text-text-light text-h1-sm md:text-h1;
+  @apply text-text-light text-h1-sm md:text-h1 tracking-tight font-bold;
 }
 
 h2,
 .h2 {
-  @apply text-text-light text-h2-sm md:text-h2;
+  @apply text-text-light text-h2-sm md:text-h2 tracking-tight;
 }
 
 h3,

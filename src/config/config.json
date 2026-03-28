@@ -1,16 +1,15 @@
 {
   "site": {
-    "title": "Safe Shield - SaaS & Tailwind Template for IT Industry",
-    "base_url": "https://safeshield-astro.vercel.app",
+    "title": "KMT — Kaleidoscope Management Technology",
+    "base_url": "https://kmt.global",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_width": "126",
     "logo_height": "51",
-    "logo_text": "safeshield"
+    "logo_text": "KMT"
   },
-
   "settings": {
     "sticky_header": false,
     "default_theme": "system",
@@ -18,33 +17,28 @@
     "summary_length": 100,
     "blog_folder": "news"
   },
-
   "params": {
     "contact_form_action": "#",
-    "copyright": "Copyright © 2024. All Rights Reserved"
+    "copyright": "© 2026 KMT Global. All Rights Reserved"
   },
-
   "subscribe": {
     "subscribe_form_action": "#",
-    "text": "Subscribe for updates and insight."
+    "text": "Stay ahead. Subscribe for updates."
   },
-
   "demo": {
-    "enable": true,
+    "enable": false,
     "form_action": "#",
-    "charge": "No credit card required 14-days free trial"
+    "charge": ""
   },
-
   "navigation_button": {
     "enable": true,
-    "label": "Get This Template",
-    "link": "https://themefisher.com/products/safeshield-astro"
+    "label": "Connect with Us",
+    "link": "#connect"
   },
-
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "KMT",
     "meta_image": "/images/og-image.png",
-    "meta_description": "Sass theme for Astro"
+    "meta_description": "KMT — Kaleidoscope Management Technology. We engineer what's next. AI-empowered, human-experience-centric digital products for marketing, intelligent interfaces, and search visibility."
   },
   "google_tag_manager": {
     "enable": false,

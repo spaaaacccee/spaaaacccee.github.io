@@ -9,12 +9,11 @@ import "@/styles/main.css";
 import { ClientRouter } from "astro:transitions";
 import { Font } from "astro:assets";
 import "aos/dist/aos.css";
-import "swiper/css";
-import ImageMod from "./components/ImageMod.astro";
 import {
   GoogleTagmanager,
   GoogleTagmanagerNoscript,
 } from "@digi4care/astro-google-tagmanager";
+import ImageMod from "./components/ImageMod.astro";
 
 // font families - extract font names for Font component (filter out type keys)
 const fontEntries = Object.entries(theme.fonts.font_family).filter(
@@ -48,17 +47,17 @@ const { title, meta_title, description, image, noindex, canonical } =
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
     <!-- theme meta -->
-    <meta name="theme-name" content="safeshield-astro" />
-    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="theme-name" content="kmt" />
+    <meta name="msapplication-TileColor" content="#050508" />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: light)"
-      content="#fff"
+      content="#050508"
     />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
-      content="#000"
+      content="#050508"
     />
     <meta name="generator" content={Astro.generator} />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -160,10 +159,9 @@ const { title, meta_title, description, image, noindex, canonical } =
     }
     <TwSizeIndicator />
     <Header />
-    <main id="main-content">
-      <div class="relative bg-top">
+    <main id="main-content"> <div class="relative bg-top">
         <div
-          class="absolute w-full top-0 left-1/2 -z-40 transform -translate-x-1/2 translate-y-[-68%] sm:translate-y-[-60%] md:translate-y-[-58%] lg:translate-y-[-65%]"
+          class="absolute w-full -hue-rotate-5 top-0 left-1/2 -z-40 transform -translate-x-1/2 translate-y-[-50%] sm:translate-y-[-52%] md:translate-y-[-55%] lg:translate-y-[-60%]"
         >
           <ImageMod
             data-aos="fade-up-sm"
@@ -191,6 +189,5 @@ const { title, meta_title, description, image, noindex, canonical } =
       aosInit();
       document.addEventListener("astro:after-swap", aosInit);
     </script>
-    <Footer />
   </body>
 </html>

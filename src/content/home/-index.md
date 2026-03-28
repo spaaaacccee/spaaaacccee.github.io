@@ -1,126 +1,60 @@
 ---
-title: "Safe Shield"
-description: "This is the homepage"
-meta_title: "Safe Shield homepage"
+title: "KMT — Kaleidoscope Management Technology"
+description: "We engineer what's next. AI-empowered, human-experience-centric digital products."
+meta_title: "KMT — Kaleidoscope Management Technology | See Infinitely"
+
 hero:
-  title: "Strengthen Security"
-  content: "Find out what's working and what's not to get more search traffic. Like an SEO consultant who can analyze millions of data."
-  form:
-    placeholder: ""
-    label: "Get Demo"
-    subtitle: "No credit card required 14-days free trial"
-  clients:
-    title: "Global Leaders Trust Safe Shield"
-    logos:
-      - "/images/home/logos/1.svg"
-      - "/images/home/logos/2.svg"
-      - "/images/home/logos/3.svg"
-      - "/images/home/logos/4.svg"
-      - "/images/home/logos/5.svg"
-      - "/images/home/logos/1.svg"
-      - "/images/home/logos/2.svg"
-      - "/images/home/logos/3.svg"
-      - "/images/home/logos/4.svg"
-      - "/images/home/logos/5.svg"
-      - "/images/home/logos/1.svg"
-      - "/images/home/logos/2.svg"
-      - "/images/home/logos/3.svg"
-      - "/images/home/logos/4.svg"
-      - "/images/home/logos/5.svg"
-      - "/images/home/logos/3.svg"
-      - "/images/home/logos/4.svg"
-      - "/images/home/logos/5.svg"
-      - "/images/home/logos/1.svg"
-      - "/images/home/logos/2.svg"
-      - "/images/home/logos/3.svg"
-      - "/images/home/logos/4.svg"
-      - "/images/home/logos/5.svg"
+  tagline: "See Infinitely."
+  subtitle: "We engineer what's next."
 
-feature:
-  title: "Instant Data Protection"
-  content: "SafeShield provides a comprehensive solution for securing data"
-  image: "/images/home/feature.png"
-  features:
-    - "Constanly Learning"
-    - "Adapting to new threats automatically"
-  button:
-    enable: true
-    label: "Explore Feature"
-    link: "/feature"
+philosophy:
+  opening: "A kaleidoscope turns — and the world shifts."
+  body: "KMT was founded on a belief: the future of digital experience lives at the intersection of human insight and artificial intelligence. We bring together Australia's sharpest marketing minds and AI and software engineering talent — not as separate disciplines, but as one lens."
+  closer: "Every product we build is AI-empowered, human-experience-centric."
 
-demo:
-  title: "Comprehensive Facilities Audit"
-  image: "/images/home/demo.png"
-  features:
-    - "Constanly Learning"
-    - "Adapting to new threats automatically"
-  button:
-    enable: true
-    label: "Explore Feature"
-    link: "/feature"
-
-compliance:
-  title: "Seamless Data Compliance."
-  content: "Effortlessly manage and ensure data compliance across your organization with our streamlined, intuitive solutions."
-  app:
-    - "/images/home/compliance/1.svg"
-    - "/images/home/compliance/2.svg"
-    - "/images/home/compliance/3.svg"
-    - "/images/home/compliance/4.svg"
-    - "/images/home/compliance/5.svg"
-
-offer:
-  title: "Demand more from encryption."
-  offers:
-    - icon: "demand/chat"
-      details: "Streamline encryption management with our centralized console."
-    - icon: "demand/grid"
-      details: "Secure your data with  including AES, RSA, and SHA-256 algorithms"
-    - icon: "demand/bot"
-      details: "Comprehensive audit logs that track activity and provide detailed event summaries."
-    - icon: "demand/console"
-      details: "Comprehensive audit logs that track activity and provide detailed event summaries"
-    - icon: "demand/console"
-      details: "Fine-tuned permission control to encrypted data."
-    - icon: "demand/square"
-      details: "Advanced key management for secure rotation and revocation."
+pillars:
+  - keyword: "Insight-led"
+    description: "Every solution starts with the market — behaviour, timing, unmet need. We do not engineer what's trending; we engineer what's next."
+  - keyword: "AI-native"
+    description: "AI isn't layered on top. It's woven into the operational DNA — systems that think, learn, and evolve with the business."
+  - keyword: "Human-first"
+    description: "We build around people — because the best systems don't ask users to adapt. They adapt to users."
 
 team:
-  title: "How Clever SafeShield Teams Leverage "
+  headline: "Four perspectives. One vision."
   members:
-    - name: "Andrew Persa"
-      image: "/images/home/team/1.png"
-      designation: "Chief technology officer, altertype"
-      details: "Securing Your Digital World: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for Comprehensive Data Security."
-      percentage: "150%"
-      motto: "Securing Your Digital World: Your Trusted "
-    - name: "Andrew Persa"
-      image: "/images/home/team/2.png"
-      designation: "Chief technology officer, altertype"
-      details: "Securing Your Digital World: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for Comprehensive Data Security."
-      percentage: "150%"
-      motto: "Securing Your Digital World: Your Trusted "
+    - name: "George Pesutto"
+      epithet: "The Wavemaker"
+      role: "CEO"
+      bio: "Born to make waves. With over 30 years shaping how brands move through culture, George has held senior commercial positions at News Corp, Fairfax, and Time Inc., and led the Media & Communications division at Roy Morgan Research. He doesn't just read markets — he rewrites the playbook. His research has been referenced hundreds of times across Australian and international media, and his insights have guided some of the country's most iconic brands into new audiences and new frontiers. At KMT, George sets the wave — turning deep market intelligence into strategies that don't follow trends, but create them."
+      image: "/images/team/george.png"
+    - name: "Coco Hu"
+      epithet: "The Strategist"
+      role: "Director"
+      bio: "A strategist with an instinct for what moves people. Across eight years navigating higher education, electric vehicles, and FMCG, Coco has built a reputation for seeing what others miss: the behavioural nuance behind a click, the human story inside a dataset. She doesn't just plan campaigns — she engineers journeys, translating consumer insight into go-to-market strategies that are sharp, measurable, and built to compound. At KMT and with qualifications with IT, Coco is the bridge between what the market feels and what the business needs."
+      image: "/images/team/coco.png"
+    - name: "Kevin Zheng"
+      epithet: "The Architect"
+      role: "Lead Engineer"
+      bio: "The engineer who makes AI visible. Kevin is the co-creator of Posthoc, an internationally award-winning visualisation framework that turns complex search algorithms into experiences anyone can understand. His work spans robotics, logistics, and intelligent planning systems. At KMT, Kevin leads the engineering of AI-powered digital products — building interfaces where sophisticated technology feels effortless."
+      image: "/images/team/kevin.png"
+    - name: "Bojie Shen, Ph.D."
+      epithet: "The Scientist"
+      role: "AI Research Lead"
+      bio: "The mind behind the machine. Bojie holds a Ph.D. in Artificial Intelligence from Monash University and was awarded the 2024 CORE Distinguished Doctoral Dissertation Award — the highest honour for an AI thesis across Australia and New Zealand. With 20+ publications in the world's top AI venues including AAAI, IJCAI, and ACM Computing Surveys, his research in intelligent search and decision-making has been applied to robotics, road networks, and warehouse automation. At KMT, Bojie architects the AI systems that give our products their edge."
+      image: "/images/team/bojie.png"
 
-demand:
-  title: "Demand more from encryption."
-  content: "Securing Your Digital World: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for Comprehensive Data Security."
-  button:
-    enable: true
-    label: "Get SafeShield Now"
-    link: "/pricing"
-  card:
-    - score: "150%"
-      title: "Increase in an Important Performance Metric."
-      content: "Use this text to add a disclaimer about the claims made above. Link to evidence or sources if necessary."
-      image: "/images/home/demand/1.svg"
-    - score: "3.9x"
-      content: "A multiple that suggests an increase in an important number."
-      image: "/images/home/demand/2.svg"
-    - score: "82m"
-      content: "This is a very large number that could suggest money or transfers etc."
-      image: "/images/home/demand/3.svg"
+services:
+  headline: "Technology that understands people."
+  items:
+    - title: "Intelligent Marketing Systems"
+      description: "Built inside the industry, for the industry. Quoting, tracking, supplier management, reporting — we've engineered systems that handle the operational weight, so your team doesn't have to. An intelligent assistant that surfaces insights from your campaign, strategy, and reporting data. Quietly. Automatically."
+    - title: "Next-Gen Interfaces"
+      description: "Digital products engineered with LLM, RAG, and agentic AI — systems that learn, adapt, and personalise in real time. Human-centred by design, with conversational AI, dynamic personalisation, and seamless UX woven in. Every interface we build is designed to evolve with your users."
+    - title: "SEO & Generative Engine Optimisation"
+      description: "Search has evolved. We optimise for both traditional engines and AI-powered discovery — Google, ChatGPT, Perplexity, and whatever comes next. Visibility, engineered for the long term."
 
-news:
-  title: "News & Insight"
-  content: "Securing Your Digital World: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for Comprehensive Data Security."
+connect:
+  line: "Let's engineer what's next."
+  email: "enquiry@kmt.global"
 ---

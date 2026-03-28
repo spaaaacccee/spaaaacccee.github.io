@@ -1,38 +1,32 @@
 ---
-import Logo from "@/components/Logo.astro";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
-import Button from "@/shortcodes/Button";
-import NavDropDown from "./NavDropDown";
-
-export interface ChildNavigationLink {
-  name: string;
-  url: string;
-}
 
 export interface NavigationLink {
   name: string;
   url: string;
   hasChildren?: boolean;
-  children?: ChildNavigationLink[];
+  children?: { name: string; url: string }[];
 }
 
 const { main }: { main: NavigationLink[] } = menu;
-const { navigation_button, settings } = config;
-const { pathname } = Astro.url;
+const { navigation_button } = config;
 ---
 
-<header class={`header z-50 ${settings.sticky_header && "fixed top-0"}`}>
-  <nav class="navbar container">
-    <!-- logo -->
-    <div class="order-0" data-aos="zoom-in-sm">
-      <Logo />
+<header class="header z-50 fixed top-0 left-0 right-0 w-full" id="site-header">
+  <nav class="navbar">
+    <!-- logo / wordmark -->
+    <div class="order-0" data-aos="fade-up-sm">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-full bg-accent shrink-0"></div>
+        <span class="text-md font-primary font-normal text-text-light whitespace-nowrap">Kaleidoscope MT</span>
+      </a>
     </div>
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
     <label
       for="nav-toggle"
-      class="order-3 cursor-pointer flex items-center lg:hidden text-text-light lg:order-1"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-text-light lg:order-1 justify-end scale-90"
       data-aos="fade-up-sm"
     >
       <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
@@ -47,22 +41,18 @@ const { pathname } = Astro.url;
       </svg>
     </label>
     <!-- /navbar toggler -->
-    <ul id="nav-menu" class="navbar-nav max-lg:shadow-lg">
+    <ul id="nav-menu" class="navbar-nav max-lg:shadow-lg justify-center">
       {
         main.map((menu, index) => (
           <div data-aos="fade-up-sm" data-aos-delay={50 + index * 50}>
-            {menu.hasChildren ? (
-              <NavDropDown menu={menu} pathname={pathname} client:load />
-            ) : (
-              <li class="nav-item">
-                <a
-                  href={menu.url}
-                  class={`nav-link block ${(pathname === `${menu.url}/` || pathname === menu.url) && "active"}`}
-                >
-                  {menu.name}
-                </a>
-              </li>
-            )}
+            <li class="nav-item">
+              <a
+                href={menu.url}
+                class="nav-link block"
+              >
+                {menu.name}
+              </a>
+            </li>
           </div>
         ))
       }
@@ -73,7 +63,7 @@ const { pathname } = Astro.url;
             data-aos="fade-up-sm"
             data-aos-delay={50 + main.length * 50}
           >
-            <a href={navigation_button.link} class="btn-md btn-primary">
+            <a href={navigation_button.link} class="btn-sm btn-primary">
               <span>{navigation_button.label}</span>
             </a>
           </li>
@@ -81,20 +71,40 @@ const { pathname } = Astro.url;
       }
     </ul>
     <div
-      class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"
+      class="order-1 ml-auto justify-end flex items-center md:order-2 lg:ml-0"
       data-aos="fade-up-sm"
       data-aos-delay={50 + main.length * 50}
     >
       {
         navigation_button.enable && (
-          <div class="hidden lg:inline-block">
-            <Button
-              link={navigation_button.link}
-              label={navigation_button.label}
-            />
+          <div class="hidden lg:block">
+            <a href={navigation_button.link} class="btn-sm btn-primary">
+              <span>{navigation_button.label}</span>
+            </a>
           </div>
         )
       }
     </div>
   </nav>
 </header>
+
+<script>
+  function initHeader() {
+    const header = document.getElementById('site-header');
+    if (!header) return;
+
+    const onScroll = () => {
+      if (window.scrollY > 80) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  initHeader();
+  document.addEventListener('astro:after-swap', initHeader);
+</script>

@@ -1,67 +1,30 @@
 ---
-import ImageMod from "@/components/ImageMod.astro";
 import config from "@/config/config.json";
-import menu from "@/config/menu.json";
 import { markdownify } from "@/lib/utils/textConverter";
-import { Image } from "astro:assets";
 
 const { copyright } = config.params;
-const { subscribe_form_action, text } = config.subscribe;
 ---
 
-<footer class="xl:pt-64 py-24 pb-0 relative">
+<footer class="py-12 border-t border-border/50">
   <div class="container">
-    <div class="row justify-between g-4 mb-32">
-      <div class="col-12 lg:col-3">
-        <div data-aos="zoom-in-sm">
-          <Image src="/images/logo.png" class="mb-6" width={101} height={34} alt="banner image" />
-        </div>
-        <p class="mb-4 lg:mb-8 w-8/12 md:text-balance text-xs text-text/70" data-aos="fade-up-sm">
-          Securing Your Digital World: Your Trusted Partner in Data Protection
-        </p>
-      </div>
-      <div class="col-12 lg:col-5">
-        <div class="row max-md:gy-4 justify-between mb-4 lg:mb-8">
-          {
-            menu.footer.map((menu) => (
-              <div class="col-6 md:col-3 pr-0">
-                <h5 class="mb-7 font-medium text-text-light text-lg lg:mb-6" data-aos="fade-up-sm">
-                  {menu.title}
-                </h5>
-                <ul>
-                  {menu.children.map((child, childIndex) => (
-                    <li
-                      class="mb-4 last:mb-0 text-text/70 text-lg hover:text-secondary"
-                      data-aos="fade-up-sm"
-                      data-aos-delay={50 + childIndex * 50}
-                    >
-                      <a target={child.url?.startsWith("http") ? "_blank" : "_self"} href={child.url}>
-                        {child.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-      <div class="col-12 lg:col-3">
-        <h5 class="mb-6 lg:mb-8" set:html={markdownify(text)} data-aos="fade-up-sm" />
-        <a href={subscribe_form_action} class="btn-md btn-outline-primary border border-accent" data-aos="fade-up-sm">
-          <span>Subscribe</span>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div >
+        <a href="/" class="flex items-center gap-2">
+          <span class="text-lg font-primary text-text-light tracking-tight">Kaleidoscope MT</span>
         </a>
       </div>
-    </div>
-    <h5
-      class="text-center text-sm text-text-light py-5 border-t border-text-light/20"
-      set:html={markdownify(copyright)}
-    />
-  </div>
-
-  <div class="w-full absolute bottom-0 left-1/2 -z-40 transform -translate-x-1/2">
-    <div data-aos="zoom-in-sm">
-      <ImageMod src="/images/footer-bg-2.png" alt="footer bg" class="w-full" width={0} height={0} quality="max" />
+      <p
+        class="text-sm text-text/60"
+        set:html={markdownify(copyright)}
+        
+      />
+      <a
+        href="mailto:enquiry@kmt.global"
+        class="text-sm text-text hover:text-secondary transition"
+        
+      >
+        enquiry@kmt.global
+      </a>
     </div>
   </div>
 </footer>

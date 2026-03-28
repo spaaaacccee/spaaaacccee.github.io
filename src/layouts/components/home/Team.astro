@@ -15,7 +15,7 @@ const { team } = Astro.props;
     <div class="row justify-center">
       <div class="col-10">
         <h2
-          set:html={markdownify(team.title)}
+          set:html={markdownify(team.headline)}
           class="text-center mb-10 text-balance lg:w-2/3 mx-auto"
           data-aos="fade-up-sm"
         />
@@ -106,7 +106,7 @@ const { team } = Astro.props;
                 </div>
               </div>
               <p set:html={markdownify(m.details)} class="my-7" />
-              <p class="rounded bg-gradient-to-r from-[#1B1B2B] to-[#020213] px-5 py-2">
+              <p class="rounded bg-linear-to-r from-[#1B1B2B] to-[#020213] px-5 py-2">
                 <span set:html={markdownify(m.percentage)} class="h5 mr-2" />
                 <span set:html={markdownify(m.motto)} class="text-gradient" />
               </p>

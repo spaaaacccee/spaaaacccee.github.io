@@ -1,0 +1,55 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  team: CollectionEntry<"homepage">["data"]["team"];
+};
+
+const { team } = Astro.props;
+---
+
+<section class="section" id="team">
+  <div class="container">
+    <div class="flex justify-center mb-16">
+      <h2
+        set:html={markdownify(team.headline)}
+        class="text-3xl md:text-4xl lg:text-5xl font-primary text-text-light text-center max-w-xl text-balance"
+        data-aos="fade-up-sm"
+      />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      {
+        team.members.map((member: any, index: number) => (
+          <div
+            class="group bg-gradient border border-border/50 rounded-2xl p-6 lg:p-8 transition-all duration-500"
+            data-aos="fade-up-sm"
+            data-aos-delay={50 + index * 100}
+          >
+            <div class="flex items-start gap-5 mb-5">
+              <!-- Portrait placeholder -->
+              <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-xl bg-border/30 shrink-0"></div>
+              <div>
+                <h4
+                  set:html={markdownify(member.name)}
+                  class="text-lg font-primary text-text-light mb-1"
+                />
+                <p class="text-secondary font-secondary">
+                  {member.epithet}
+                </p>
+                <p class="text-text/60 font-secondary">
+                  {member.role}
+                </p>
+              </div>
+            </div>
+            <p
+              set:html={markdownify(member.bio)}
+              class="text-text leading-relaxed font-secondary"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

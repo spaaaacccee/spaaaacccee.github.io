@@ -16,14 +16,13 @@
   @import "./navigation.css";
   @import "./buttons.css";
   @import "./animation.css";
-  @import "./animation.css";
+  @import "./kaleidoscope.css";
 }
 
 @theme {
   --breakpoint-sm: 540px;
 
   --shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
-
   --radius-sm: 4px;
   --radius: 6px;
   --radius-lg: 12px;

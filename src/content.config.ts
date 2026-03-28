@@ -11,92 +11,50 @@ const commonFields = {
   draft: z.boolean().optional(),
 };
 
-// Page
+// KMT Homepage
 const homepageCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/home" }),
   schema: z.object({
     ...commonFields,
     hero: z.object({
-      title: z.string(),
-      content: z.string(),
-      form: z.object({
-        placeholder: z.string(),
-        label: z.string(),
-        subtitle: z.string(),
+      tagline: z.string(),
+      subtitle: z.string(),
+    }),
+    philosophy: z.object({
+      opening: z.string(),
+      body: z.string(),
+      closer: z.string(),
+    }),
+    pillars: z.array(
+      z.object({
+        keyword: z.string(),
+        description: z.string(),
       }),
-      clients: z.object({
-        title: z.string(),
-        logos: z.array(z.string()),
-      }),
-    }),
-    feature: z.object({
-      title: z.string(),
-      content: z.string(),
-      image: z.string(),
-      features: z.array(z.string()),
-      button: z.object({
-        enable: z.boolean(),
-        label: z.string(),
-        link: z.string(),
-      }),
-    }),
-    demo: z.object({
-      title: z.string(),
-      image: z.string(),
-      features: z.array(z.string()),
-      button: z.object({
-        enable: z.boolean(),
-        label: z.string(),
-        link: z.string(),
-      }),
-    }),
-    compliance: z.object({
-      title: z.string(),
-      content: z.string(),
-      app: z.array(z.string()),
-    }),
-    offer: z.object({
-      title: z.string(),
-      offers: z.array(
-        z.object({
-          icon: z.string(),
-          details: z.string(),
-        }),
-      ),
-    }),
+    ),
     team: z.object({
-      title: z.string(),
+      headline: z.string(),
       members: z.array(
         z.object({
           name: z.string(),
+          epithet: z.string(),
+          role: z.string(),
+          bio: z.string(),
           image: z.string(),
-          designation: z.string(),
-          details: z.string(),
-          percentage: z.string(),
-          motto: z.string(),
         }),
       ),
     }),
-    demand: z.object({
-      title: z.string(),
-      content: z.string(),
-      button: z.object({
-        enable: z.boolean(),
-        label: z.string(),
-        link: z.string(),
-      }),
-      card: z.array(
+    services: z.object({
+      headline: z.string(),
+      items: z.array(
         z.object({
-          score: z.string(),
-          title: z.string().optional(),
-          content: z.string(),
-          image: z.string(),
+          title: z.string(),
+          description: z.string(),
         }),
       ),
     }),
-    news: z.object({
-      title: z.string(),
-      content: z.string(),
+    connect: z.object({
+      line: z.string(),
+      email: z.string(),
     }),
   }),
 });

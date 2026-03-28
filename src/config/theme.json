@@ -6,12 +6,13 @@
         "secondary": "#A787FF",
         "tertiary": "#7543FF",
         "accent": "#343AA8",
+        "action": "#0046b8",
         "body": "#000000",
         "border": "#1e1458",
         "light": "#f6f6f9"
       },
       "text_color": {
-        "text": "#9393CB",
+        "text": "#aeaed6",
         "text-dark": "#0A0A0A",
         "text-light": "#FFFFFF"
       }
@@ -19,13 +20,16 @@
   },
   "fonts": {
     "font_family": {
-      "primary": "Almarai:wght@400;500;600",
+      "primary": "Sora:wght@300;400;500;600",
       "primary_type": "Inter-Medium, Inter Placeholder, sans-serif",
-      "secondary": "Outfit:wght@400;500;600",
+      "secondary": "TASA+Orbiter:wght@400;500;600",
       "secondary_type": "Inter-Medium, Inter Placeholder, sans-serif",
       "tertiary": "Roboto-Mono:wght@400;500;600",
       "tertiary_type": "Inter-Medium, Inter Placeholder, sans-serif"
     },
-    "font_size": { "base": "16", "scale": "1.2" }
+    "font_size": {
+      "base": "16",
+      "scale": "1.25"
+    }
   }
 }

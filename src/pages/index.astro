@@ -1,35 +1,29 @@
 ---
-import Compliance from "@/components/home/Compliance.astro";
-import Demand from "@/components/home/Demand.astro";
-import Demo from "@/components/home/Demo.astro";
-import Feature from "@/components/home/Feature.astro";
 import Hero from "@/components/home/Hero.astro";
-import News from "@/components/home/News.astro";
-import Offer from "@/components/home/Offer.astro";
-import Team from "@/components/home/Team.astro";
+import Philosophy from "@/components/home/Philosophy.astro";
+import Pillars from "@/components/home/Pillars.astro";
+import Creators from "@/components/home/Creators.astro";
+import Services from "@/components/home/Services.astro";
+import Connect from "@/components/home/Connect.astro";
 import Base from "@/layouts/Base.astro";
 import { getListPage } from "@/lib/contentParser.astro";
-import CallToAction from "@/partials/CallToAction.astro";
+import Footer from "@/partials/Footer.astro";
 
 const homepage = await getListPage("homepage", "-index");
-const call_to_action = await getListPage("ctaSection", "call-to-action");
 
 if (homepage.data.draft) {
   return Astro.redirect("/404");
 }
 
-const { hero, feature, demo, compliance, offer, team, demand, news } = homepage.data;
+const { hero, philosophy, pillars, team, services, connect, } = homepage.data;
 ---
 
 <Base>
   <Hero hero={hero} />
-  <Feature feature={feature} />
-  <Demo demo={demo} />
-  <Compliance compliance={compliance} />
-  <Offer offer={offer} />
-  <Team team={team} />
-  <Demand demand={demand} />
-  <News news={news} />
-
-  <CallToAction call_to_action={call_to_action.data} />
+  <Philosophy philosophy={philosophy} />
+  <Pillars pillars={pillars} />
+  <Creators team={team} />
+  <Services services={services} />
+  <Connect connect={connect} />
+  <Footer />
 </Base>

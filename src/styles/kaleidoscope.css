@@ -1,0 +1,95 @@
+/* Kaleidoscope background effect for hero */
+.kaleidoscope-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  box-shadow: inset -100px -100px 300px 0px
+    color-mix(in oklab, var(--color-accent), transparent 80%);
+}
+
+.kaleidoscope-layer {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  will-change: transform;
+}
+
+.kaleidoscope-layer-1 {
+  width: max(640px, 60vw);
+  height: max(640px, 60vw);
+  top: -20%;
+  left: -10%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--color-secondary) 0%,
+    transparent 70%
+  );
+  animation: kaleidoscope-drift-1 20s ease-in-out infinite;
+}
+
+.kaleidoscope-layer-2 {
+  width: max(620px, 50vw);
+  height: max(620px, 50vw);
+  top: 10%;
+  right: -15%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--color-tertiary) 0%,
+    transparent 70%
+  );
+  animation: kaleidoscope-drift-2 25s ease-in-out infinite;
+}
+
+.kaleidoscope-layer-3 {
+  width: max(600px, 40vw);
+  height: max(600px, 40vw);
+  bottom: -10%;
+  left: 30%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--color-accent) 0%,
+    transparent 70%
+  );
+  animation: kaleidoscope-drift-3 30s ease-in-out infinite;
+}
+
+@keyframes kaleidoscope-drift-1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(10%, 5%) scale(1.1);
+  }
+  66% {
+    transform: translate(-5%, 10%) scale(0.95);
+  }
+}
+
+@keyframes kaleidoscope-drift-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-8%, -5%) scale(0.9);
+  }
+  66% {
+    transform: translate(5%, -8%) scale(1.05);
+  }
+}
+
+@keyframes kaleidoscope-drift-3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(5%, -10%) scale(1.1);
+  }
+  66% {
+    transform: translate(-10%, 5%) scale(0.9);
+  }
+}
